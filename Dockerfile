@@ -1,6 +1,14 @@
 # Use imutable image tags rather than mutable tags (like ubuntu:20.04)
 FROM ubuntu:focal-20220316
 
+# Some tools like yamllint need this
+# Pip needs this as well at the moment to install ansible
+# (and potentially other packages)
+# See: https://github.com/pypa/pip/issues/10219
+ENV LANG=C.UTF-8 \
+    DEBIAN_FRONTEND=noninteractive \
+    PYTHONDONTWRITEBYTECODE=1
+
 RUN apt update -y \
     && apt install -y \
     libssl-dev python3-dev sshpass apt-transport-https jq moreutils \
@@ -13,12 +21,6 @@ RUN curl -fsSL https://download.docker.com/linux/ubuntu/gpg | apt-key add - \
     stable" \
     && apt update -y && apt-get install --no-install-recommends -y docker-ce \
     && rm -rf /var/lib/apt/lists/*
-
-# Some tools like yamllint need this
-# Pip needs this as well at the moment to install ansible
-# (and potentially other packages)
-# See: https://github.com/pypa/pip/issues/10219
-ENV LANG=C.UTF-8
 
 WORKDIR /kubespray
 COPY . .
