@@ -1,8 +1,8 @@
 #!/bin/sh
-set -eo pipefail
+set -e
 
 VERSIONS="$@"
-ARCHITECTURES="arm arm64 amd64"
+ARCHITECTURES="arm64 amd64"
 DOWNLOADS="kubelet kubectl kubeadm"
 DOWNLOAD_DIR="tmp/kubeadm_hasher"
 
@@ -19,7 +19,7 @@ for download in ${DOWNLOADS}; do
     for version in ${VERSIONS}; do
       TARGET="${DOWNLOAD_DIR}/${download}-$version-$arch"
       if [ ! -f ${TARGET} ]; then
-        curl -L -f -S -s -o ${TARGET} "https://storage.googleapis.com/kubernetes-release/release/${version}/bin/linux/${arch}/${download}"
+        curl -L -f -S -s -o ${TARGET} "https://llaoj.oss-cn-beijing.aliyuncs.com/kubernetes/storage.googleapis.com/kubernetes-release/release/${version}/bin/linux/${arch}/${download}"
       fi
       echo -e "    ${version}: $(sha256sum ${TARGET} | awk '{print $1}')"
     done
