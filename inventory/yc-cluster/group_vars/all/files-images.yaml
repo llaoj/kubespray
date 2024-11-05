@@ -75,3 +75,7 @@ dashboard_image_repo: "{{ acr_image_repo }}/kubernetesui_dashboard-amd64"
 dashboard_metrics_scraper_repo: "{{ acr_image_repo }}/kubernetesui_metrics-scraper"
 metallb_speaker_image_repo: "{{ acr_image_repo }}/metallb_speaker"
 metallb_controller_image_repo: "{{ acr_image_repo }}/metallb_controller"
+
+# versions
+runc_version: v1.1.1
+containerd_version: 1.6.0
