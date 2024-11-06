@@ -104,7 +104,7 @@ ingress_nginx_tolerations:
 ingress_nginx_configmap:
   enable-underscores-in-headers: "true"
   use-forwarded-headers: "true"
-  proxy-body-size: 50m
+  proxy-body-size: "0"
 # ingress_nginx_configmap_tcp_services:
 #   9000: "default/example-go:8080"
 # ingress_nginx_configmap_udp_services:
