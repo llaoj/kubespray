@@ -1,0 +1,18 @@
+name: generate offline files & images
+
+on:
+  push:
+    tags:
+    - 'v[0-9].[0-9]+.[0-9]+**'
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Build and push image to ACR
+        run: |
+          GIT_TAG=${GITHUB_REF#refs/tags/}
+          docker build -t registry.cn-beijing.aliyuncs.com/llaoj/kubespray_kubespray:${GIT_TAG} .
+          docker login -u ${{ secrets.REGISTRY_USERNAME }} -p ${{ secrets.REGISTRY_PASSWORD }} registry.cn-beijing.aliyuncs.com
+          docker push registry.cn-beijing.aliyuncs.com/llaoj/kubespray_kubespray:${GIT_TAG}
