@@ -13,8 +13,8 @@ jobs:
       - name: generate files and images
         run: |
           ./contrib/offline/generate_list.sh
-          cat temp/files.list
-          cat temp/images.list
+          cat ./contrib/offline/temp/files.list
+          cat ./contrib/offline/temp/images.list
   generate-arm64:
     runs-on: macos-14
     steps:
@@ -23,5 +23,5 @@ jobs:
         run: |
           brew install ansible
           ./contrib/offline/generate_list.sh
-          cat temp/files.list
-          cat temp/images.list
+          cat ./contrib/offline/temp/files.list
+          cat ./contrib/offline/temp/images.list
