@@ -6,6 +6,6 @@
 ```
 
 集群的信息:
-- Kuberenetes version
+- Kuberenetes version 1.29.10
 - Addons:
   - 
