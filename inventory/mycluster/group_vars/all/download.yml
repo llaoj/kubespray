@@ -1,6 +1,6 @@
 ---
 # Download URLs
-oss_files_repo: "https://llaoj.oss-cn-beijing.aliyuncs.com/kubernetes"
+oss_files_repo: "https://llaoj.oss-cn-beijing.aliyuncs.com/files"
 
 kubelet_download_url: "{{oss_files_repo}}/dl.k8s.io/release/{{ kube_version }}/bin/linux/{{ image_arch }}/kubelet"
 kubectl_download_url: "{{oss_files_repo}}/dl.k8s.io/release/{{ kube_version }}/bin/linux/{{ image_arch }}/kubectl"
