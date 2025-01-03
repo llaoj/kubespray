@@ -81,6 +81,7 @@ dashboard_metrics_scraper_repo: "{{acr_image_repo}}/kubernetesui_metrics-scraper
 
 local_volume_provisioner_image_repo: "{{acr_image_repo}}/sig-storage_local-volume-provisioner"
 local_path_provisioner_image_repo: "{{acr_image_repo}}/rancher_local-path-provisioner"
+local_path_provisioner_helper_image_repo: "{{acr_image_repo}}/library_busybox"
 cephfs_provisioner_image_repo: "{{acr_image_repo}}/external_storage_cephfs-provisioner"
 rbd_provisioner_image_repo: "{{acr_image_repo}}/external_storage_rbd-provisioner"
 

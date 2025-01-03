@@ -12,7 +12,7 @@ docker run --rm -t --net=host \
   -v ${HOME}/.ssh:/root/.ssh \
   -v ${PWD}/inventory.ini:/kubespray/inventory/mycluster/inventory.ini \
   --entrypoint /bin/bash \
-  registry.cn-beijing.aliyuncs.com/llaoj/kubespray_kubespray:v2.25.1-patch-0.3 \
+  registry.cn-beijing.aliyuncs.com/llaoj/kubespray_kubespray:v2.25.1-patch-0.4 \
   -c "ansible-playbook -i /kubespray/inventory/mycluster/inventory.ini cluster.yml -vvv"
 ```
 ## 集群信息
@@ -26,6 +26,7 @@ docker run --rm -t --net=host \
     - pod cidr: 10.244.0.0/16
     - coredns+nodelocaldns(169.254.25.10)
     - calico vxlan mode
+    - rancher-local-path-provisioner
 - Addons:
   - ingress-nginx
   - helm
