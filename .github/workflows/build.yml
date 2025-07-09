@@ -1,0 +1,28 @@
+name: build image
+
+on:
+  push:
+    tags:
+      - "v2.27.[0-9]-[0-9]+.[0-9]+**"
+
+env:
+  REGISTRY: registry.cn-beijing.aliyuncs.com
+  IMAGE_REPO: llaoj/kubespray
+  TAG: $GITHUB_REF_NAME
+  PROJECT_DIR: $GITHUB_WORKSPACE
+  DOCKERFILE: Dockerfile
+
+jobs:
+  build:
+    runs-on: gcr.io/kaniko-project/executor:debug
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Build and push image to ACR
+        run: |
+          echo "{\"auths\":{\"$REGISTRY\":{\"auth\":\"$(echo -n ${REGISTRY_USERNAME}:${REGISTRY_PASSWORD} | base64)\"}}}" > /kaniko/.docker/config.json
+          /kaniko/executor --cache=true \
+            --context $PROJECT_DIR \
+            --dockerfile $PROJECT_DIR/$DOCKERFILE \
+            --label 'git-ref=$GITHUB_REF' \
+            --destination $REGISTRY/$IMAGE_REPO:$TAG
