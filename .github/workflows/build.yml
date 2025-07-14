@@ -29,6 +29,6 @@ jobs:
           context: .
           file: ./Dockerfile
           push: true
-          tags: registry.cn-beijing.aliyuncs.com/llaoj/kubespray:${{ github.ref_name }}
+          tags: registry.cn-beijing.aliyuncs.com/llaoj/kubespray_kubespray:${{ github.ref_name }}
           build-args: |
             BUILDKIT_INLINE_CACHE=1
