@@ -20,16 +20,17 @@ jobs:
 
       - name: Set up Docker credentials
         run: |
-          mkdir -p /kaniko/.docker
-          echo "{\"auths\":{\"${{ env.REGISTRY }}\":{\"auth\":\"$(echo -n '${{ secrets.REGISTRY_USERNAME }}:${{ secrets.REGISTRY_PASSWORD }}' | base64)\"}}}" > /kaniko/.docker/config.json
+          mkdir -p $(pwd)/kaniko/.docker
+          echo "{\"auths\":{\"${{ env.REGISTRY }}\":{\"auth\":\"$(echo -n '${{ secrets.REGISTRY_USERNAME }}:${{ secrets.REGISTRY_PASSWORD }}' | base64)\"}}}" > $(pwd)/kaniko/.docker/config.json
 
       - name: Build and push image using Kaniko
         run: |
           docker run --rm \
             -v $(pwd):/workspace \
-            -v /kaniko/.docker:/kaniko/.docker \
+            -v $(pwd)/kaniko/.docker:/kaniko/.docker \
             gcr.io/kaniko-project/executor:debug \
             --context=dir:///workspace \
             --dockerfile=/workspace/${{ env.DOCKERFILE }} \
             --destination=${{ env.REGISTRY }}/${{ env.IMAGE_REPO }}:${{ env.TAG }} \
             --cache=true
+
