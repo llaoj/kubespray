@@ -23,10 +23,6 @@ jobs:
           username: ${{ secrets.REGISTRY_USERNAME }}
           password: ${{ secrets.REGISTRY_PASSWORD }}
 
-      - name: Enable QEMU for multi-platform builds
-        run: |
-          docker run --privileged --rm tonistiigi/binfmt --install all
-
       - name: Build and Push Docker image with BuildKit
         uses: docker/build-push-action@v5
         with:
