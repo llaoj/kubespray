@@ -23,6 +23,10 @@ jobs:
           username: ${{ secrets.REGISTRY_USERNAME }}
           password: ${{ secrets.REGISTRY_PASSWORD }}
 
+      - name: Enable QEMU for multi-platform builds
+        run: |
+          docker run --privileged --rm tonistiigi/binfmt --install all
+
       - name: Build and Push Docker image with BuildKit
         uses: docker/build-push-action@v5
         with:
@@ -32,3 +36,4 @@ jobs:
           tags: registry.cn-beijing.aliyuncs.com/llaoj/kubespray_kubespray:${{ github.ref_name }}
           build-args: |
             BUILDKIT_INLINE_CACHE=1
+          platforms: linux/amd64,linux/arm64
