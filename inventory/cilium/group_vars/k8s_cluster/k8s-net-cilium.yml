@@ -151,7 +151,7 @@ cilium_l2announcements: false
 
 # Hubble
 ### Enable Hubble without install
-# cilium_enable_hubble: false
+cilium_enable_hubble: true
 ### Enable Hubble-ui
 ### Installed by default when hubble is enabled. To disable set to false
 # cilium_enable_hubble_ui: "{{ cilium_enable_hubble }}
@@ -166,7 +166,7 @@ cilium_l2announcements: false
 # - icmp
 # - http
 ### Enable Hubble install
-# cilium_hubble_install: false
+cilium_hubble_install: true
 ### Enable auto generate certs if cilium_hubble_install: true
 # cilium_hubble_tls_generate: false
 
