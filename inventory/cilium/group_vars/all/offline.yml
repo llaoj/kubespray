@@ -11,11 +11,33 @@
 # ubuntu_repo: "http://myinternalubunturepo"
 
 ## Container Registry overrides
-# kube_image_repo: "{{ registry_host }}"
+acr_image_repo: "registry.cn-beijing.aliyuncs.com/llaoj"
+kube_image_repo: "{{ acr_image_repo }}"
 # gcr_image_repo: "{{ registry_host }}"
 # github_image_repo: "{{ registry_host }}"
 # docker_image_repo: "{{ registry_host }}"
 # quay_image_repo: "{{ registry_host }}"
+
+## Container Repo overrides
+kube_proxy_image_repo: "{{ acr_image_repo }}/kube-proxy"
+etcd_image_repo: "{{ acr_image_repo }}/coreos_etcd"
+pod_infra_image_repo: "{{ acr_image_repo }}/pause"
+cilium_image_repo: "{{ acr_image_repo }}/cilium_cilium"
+cilium_operator_image_repo: "{{ acr_image_repo }}/cilium_operator"
+cilium_hubble_relay_image_repo: "{{ acr_image_repo }}/cilium_hubble-relay"
+cilium_hubble_certgen_image_repo: "{{ acr_image_repo }}/cilium_certgen"
+cilium_hubble_ui_image_repo: "{{ acr_image_repo }}/cilium_hubble-ui"
+cilium_hubble_ui_backend_image_repo: "{{ acr_image_repo }}/cilium_hubble-ui-backend"
+cilium_hubble_envoy_image_repo: "{{ acr_image_repo }}/envoyproxy_envoy"
+kube_vip_image_repo: "{{ acr_image_repo }}/kube-vip_kube-vip"
+local_path_provisioner_image_repo: "{{ acr_image_repo }}/rancher_local-path-provisioner"
+local_path_provisioner_helper_image_repo: "{{ acr_image_repo }}/library_busybox"
+coredns_image_repo: "{{ acr_image_repo }}/coredns_coredns"
+nodelocaldns_image_repo: "{{ acr_image_repo }}/dns_k8s-dns-node-cache"
+dnsautoscaler_image_repo: "{{ acr_image_repo }}/cpa_cluster-proportional-autoscaler"
+ingress_nginx_controller_image_repo: "{{ acr_image_repo }}/ingress-nginx_controller"
+ingress_nginx_opentelemetry_image_repo: "{{ acr_image_repo }}/ingress-nginx_opentelemetry"
+ingress_nginx_kube_webhook_certgen_image_repo: "{{ acr_image_repo }}/ingress-nginx_kube-webhook-certgen"
 
 ## Kubernetes components
 # kubeadm_download_url: "{{ files_repo }}/dl.k8s.io/release/{{ kube_version }}/bin/linux/{{ image_arch }}/kubeadm"
@@ -26,10 +48,10 @@
 ## Two options - Override entire repository or override only a single binary.
 
 ## [Optional] 1 - Override entire binary repository
-# github_url: "https://my_github_proxy"
-# dl_k8s_io_url: "https://my_dl_k8s_io_proxy"
-# storage_googleapis_url: "https://my_storage_googleapi_proxy"
-# get_helm_url: "https://my_helm_sh_proxy"
+github_url: https://llaoj.oss-cn-beijing.aliyuncs.com/files/github.com
+dl_k8s_io_url: https://llaoj.oss-cn-beijing.aliyuncs.com/files/dl.k8s.io
+storage_googleapis_url: https://llaoj.oss-cn-beijing.aliyuncs.com/files/storage.googleapis.com
+get_helm_url: https://llaoj.oss-cn-beijing.aliyuncs.com/files/get.helm.sh
 
 ## [Optional] 2 - Override a specific binary
 ## CNI Plugins

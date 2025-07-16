@@ -21,6 +21,16 @@ Below are several ways to use Kubespray to deploy a Kubernetes cluster.
 
 See [Getting started](/docs/getting_started/getting-started.md)
 
+For llaoj's custiom cilium version:
+
+```sh
+docker run --rm -t --net=host \
+  -v ${HOME}/.ssh:/root/.ssh \
+  registry.cn-beijing.aliyuncs.com/llaoj/kubespray_kubespray:v2.27.0-cilium-0.N \
+  ansible-playbook -i inventory/cilium/inventory.ini cluster.yml -vvv
+
+```
+
 #### Collection
 
 See [here](docs/ansible/ansible_collection.md) if you wish to use this repository as an Ansible collection
