@@ -137,3 +137,8 @@ unsafe_show_logs: true
 
 ## If enabled it will allow kubespray to attempt setup even if the distribution is not supported. For unsupported distributions this can lead to unexpected failures in some cases.
 allow_unsupported_distribution_setup: false
+
+## If enabled it will stop the os firewalld/ufw
+# This is useful if you want to manage the firewall manually or with another tool.
+# If you want to use the firewall, set this to false and manage it manually.
+disable_service_firewall: true
