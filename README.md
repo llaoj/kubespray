@@ -24,11 +24,7 @@ See [Getting started](/docs/getting_started/getting-started.md)
 For llaoj's custiom cilium version:
 
 ```sh
-docker run --rm -t --net=host \
-  -v ${HOME}/.ssh:/root/.ssh \
-  registry.cn-beijing.aliyuncs.com/llaoj/kubespray_kubespray:v2.27.0-cilium-0.N \
-  ansible-playbook -i inventory/cilium/inventory.ini cluster.yml -vvv
-
+docker run --rm -t --net=host -v ${HOME}/.ssh:/root/.ssh registry.cn-beijing.aliyuncs.com/llaoj/kubespray_kubespray:v2.27.0-cilium-0.6 ansible-playbook -i inventory/cilium/inventory.ini deploy-all.yml -vvvvvv
 ```
 
 #### Collection

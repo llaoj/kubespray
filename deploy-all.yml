@@ -1,0 +1,6 @@
+---
+- name: Run OS Services prepare
+  ansible.builtin.import_playbook: contrib/os-services/os-services.yml
+
+- name: Install Kubernetes
+  ansible.builtin.import_playbook: playbooks/cluster.yml
