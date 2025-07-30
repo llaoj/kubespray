@@ -142,3 +142,12 @@ allow_unsupported_distribution_setup: false
 # This is useful if you want to manage the firewall manually or with another tool.
 # If you want to use the firewall, set this to false and manage it manually.
 disable_service_firewall: true
+
+# Set additional sysctl variables to modify Linux kernel variables
+additional_sysctl:
+  # see details in https://help.aliyun.com/knowledge_detail/39428.html
+  - { name: net.ipv4.conf.all.rp_filter, value: 0 }
+  - { name: net.ipv4.conf.default.rp_filter, value: 0 }
+  - { name: net.ipv4.conf.default.arp_announce, value: 2 }
+  - { name: net.ipv4.conf.lo.arp_announce, value: 2 }
+  - { name: net.ipv4.conf.all.arp_announce, value: 2 }
