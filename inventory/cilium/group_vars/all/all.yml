@@ -151,3 +151,24 @@ additional_sysctl:
   - { name: net.ipv4.conf.default.arp_announce, value: 2 }
   - { name: net.ipv4.conf.lo.arp_announce, value: 2 }
   - { name: net.ipv4.conf.all.arp_announce, value: 2 }
+  # 定义了系统中每一个端口最大的监听队列的长度,这是个全局的参数,默认值为1024
+  - { name: net.core.somaxconn, value: 32768 }
+  # https://www.elastic.co/docs/deploy-manage/deploy/self-managed/vm-max-map-count
+  - { name: vm.max_map_count, value: 262144 }
+  # refer to https://github.com/Azure/AKS/issues/772
+  - { name: fs.inotify.max_user_watches, value: 1048576 }
+  # 如果使用kube_proxy且mode为ipvs
+  # 修复ipvs模式下长连接timeout问题 小于900即可
+  # ipvsadm -l --timout
+  # refer to https://github.com/moby/moby/issues/31208 
+  # - { name: net.ipv4.tcp_keepalive_time, value: 600 }
+  # - { name: net.ipv4.tcp_keepalive_intvl, value: 30 }
+  # - { name: net.ipv4.tcp_keepalive_probes, value: 10 }
+  # 通常在现代系统中，默认值为 1048576
+  # 这意味着单个进程最多可以打开 1,048,576 个文件描述符
+  # 默认值上百万可以满足大流量需求
+  # 使用下面的命令检查服务器配置
+  # $ sysctl -a | grep fs.nr_open
+  # fs.nr_open = 1048576
+  # - { name: fs.nr_open, value: 1048576 }
+
