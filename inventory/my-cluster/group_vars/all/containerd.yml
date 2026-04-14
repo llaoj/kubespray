@@ -14,12 +14,12 @@
 #   engine: ""
 #   root: ""
 
+# containerd_additional_runtimes:
 # Example for Kata Containers as additional runtime:
-containerd_additional_runtimes:
-  - name: kata
-    type: "io.containerd.kata.v2"
-    engine: ""
-    root: ""
+#   - name: kata
+#     type: "io.containerd.kata.v2"
+#     engine: ""
+#     root: ""
 
 # containerd_grpc_max_recv_message_size: 16777216
 # containerd_grpc_max_send_message_size: 16777216

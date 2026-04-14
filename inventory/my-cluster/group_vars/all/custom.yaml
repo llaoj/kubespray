@@ -81,3 +81,8 @@ metallb_controller_image_repo: "{{ acr_image_repo }}/metallb_controller"
 # versions
 runc_version: v1.1.1
 containerd_version: 1.6.0
+
+# Pod Overhead is mandatory if you run Pods with Kata Containers
+# To enable Pod Overhead feature you have to configure Kubelet with the appropriate cgroup driver, using the following configuration:
+# `cgroupfs` works best:
+kubelet_cgroup_driver: cgroupfs
