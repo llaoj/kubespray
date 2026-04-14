@@ -91,11 +91,11 @@ rbd_provisioner_enabled: false
 
 # Nginx ingress controller deployment
 ingress_nginx_enabled: true
-ingress_nginx_host_network: true
+# ingress_nginx_host_network: false
 ingress_publish_status_address: ""
 ingress_nginx_nodeselector:
   kubernetes.io/os: "linux"
-  dedicated: "ingress-nginx"
+  # dedicated: "ingress-nginx"
 ingress_nginx_tolerations:
   - operator: Exists
 # ingress_nginx_namespace: "ingress-nginx"
