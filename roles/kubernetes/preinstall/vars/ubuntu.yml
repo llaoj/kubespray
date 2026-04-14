@@ -1,7 +1,7 @@
 ---
 required_pkgs:
   - python3-apt
-  # - aufs-tools
+  - aufs-tools
   - apt-transport-https
   - software-properties-common
   - conntrack
