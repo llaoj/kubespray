@@ -206,7 +206,7 @@ dns_domain: "{{ cluster_name }}"
 container_manager: containerd
 
 # Additional container runtimes
-kata_containers_enabled: false
+kata_containers_enabled: true
 
 kubeadm_certificate_key: "{{ lookup('password', credentials_dir + '/kubeadm_certificate_key.creds length=64 chars=hexdigits') | lower }}"
 
