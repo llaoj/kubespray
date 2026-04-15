@@ -1,0 +1,4 @@
+# disable checksum for kube binary
+kubeadm_binary_checksum: ""
+kubelet_binary_checksum: ""
+kubectl_binary_checksum: ""
