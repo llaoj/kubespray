@@ -23,11 +23,6 @@ containerd_download_url: "{{ aliyun_oss_url }}/github.com/containerd/containerd/
 cri_dockerd_download_url: "{{ aliyun_oss_url }}/github.com/Mirantis/cri-dockerd/releases/download/v{{ cri_dockerd_version }}/cri-dockerd-{{ cri_dockerd_version }}.{{ image_arch }}.tgz"
 skopeo_download_url: "{{ aliyun_oss_url }}/github.com/lework/skopeo-binary/releases/download/{{ skopeo_version }}/skopeo-linux-{{ image_arch }}"
 
-# disable checksum for kube binary
-kubeadm_binary_checksum: ""
-kubelet_binary_checksum: ""
-kubectl_binary_checksum: ""
-
 # container image
 acr_image_repo: registry.cn-beijing.aliyuncs.com/llaoj
 kube_image_repo: "{{ acr_image_repo }}"
