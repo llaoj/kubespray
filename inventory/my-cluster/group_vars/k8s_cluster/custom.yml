@@ -80,8 +80,3 @@ csi_livenessprobe_image_repo: "{{ acr_image_repo }}/sig-storage_livenessprobe"
 csi_resizer_image_repo: "{{ acr_image_repo }}/sig-storage_csi-resizer"
 csi_node_driver_registrar_image_repo: "{{ acr_image_repo }}/sig-storage_csi-node-driver-registrar"
 snapshot_controller_image_repo: "{{ acr_image_repo }}/sig-storage_snapshot-controller"
-
-# To enable Pod Overhead feature you have to configure Kubelet with the appropriate cgroup driver
-# The `cgroupfs` works best:
-kubelet_cgroup_driver: cgroupfs
-containerd_use_systemd_cgroup: false
