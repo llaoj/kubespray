@@ -4,7 +4,7 @@
 # dashboard_enabled: false
 
 # Helm deployment
-helm_enabled: false
+helm_enabled: true
 
 # Registry deployment
 registry_enabled: false
@@ -30,7 +30,7 @@ local_path_provisioner_enabled: true
 # local_path_provisioner_debug: false
 # local_path_provisioner_image_repo: "rancher/local-path-provisioner"
 # local_path_provisioner_image_tag: "v0.0.22"
-# local_path_provisioner_helper_image_repo: "busybox"
+local_path_provisioner_helper_image_repo: "registry.cn-beijing.aliyuncs.com/llaoj/library_busybox"
 # local_path_provisioner_helper_image_tag: "latest"
 
 # Local volume provisioner deployment
