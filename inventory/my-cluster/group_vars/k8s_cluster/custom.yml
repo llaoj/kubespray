@@ -1,3 +1,6 @@
+# kata
+kata_containers_version: 3.7.0
+
 # Download URLs
 aliyun_oss_url: "https://llaoj.oss-cn-beijing.aliyuncs.com/files"
 kubelet_download_url: "{{ aliyun_oss_url }}/storage.googleapis.com/kubernetes-release/release/{{ kube_version }}/bin/linux/{{ image_arch }}/kubelet"
