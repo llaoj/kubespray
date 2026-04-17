@@ -118,7 +118,7 @@ default_bridges = 1
 
 # Default memory size in MiB for SB/VM.
 # If unspecified then it will be set 2048 MiB.
-default_memory = 2048
+default_memory = {{ kata_containers_qemu_default_memory }}
 #
 # Default memory slots per SB/VM.
 # If unspecified then it will be set 10.
@@ -653,7 +653,7 @@ disable_new_netns = false
 # The sandbox cgroup path is the parent cgroup of a container with the PodSandbox annotation.
 # The sandbox cgroup is constrained if there is no container type annotation.
 # See: https://pkg.go.dev/github.com/kata-containers/kata-containers/src/runtime/virtcontainers#ContainerType
-sandbox_cgroup_only = false
+sandbox_cgroup_only = {{ kata_containers_qemu_sandbox_cgroup_only }}
 
 # If enabled, the runtime will attempt to determine appropriate sandbox size (memory, CPU) before booting the virtual machine. In
 # this case, the runtime will not dynamically update the amount of memory and CPU in the virtual machine. This is generally helpful
