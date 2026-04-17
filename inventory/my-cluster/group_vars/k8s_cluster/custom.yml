@@ -1,5 +1,5 @@
 # kata
-kata_containers_version: 3.7.0
+kata_containers_version: 3.28.0
 
 # Download URLs
 aliyun_oss_url: "https://llaoj.oss-cn-beijing.aliyuncs.com/files"
@@ -17,7 +17,7 @@ helm_download_url: "{{ aliyun_oss_url }}/get.helm.sh/helm-{{ helm_version }}-lin
 runc_download_url: "{{ aliyun_oss_url }}/github.com/opencontainers/runc/releases/download/{{ runc_version }}/runc.{{ image_arch }}"
 crun_download_url: "{{ aliyun_oss_url }}/github.com/containers/crun/releases/download/{{ crun_version }}/crun-{{ crun_version }}-linux-{{ image_arch }}"
 youki_download_url: "{{ aliyun_oss_url }}/github.com/containers/youki/releases/download/v{{ youki_version }}/youki_v{{ youki_version | regex_replace('\\.', '_') }}_linux.tar.gz"
-kata_containers_download_url: "{{ aliyun_oss_url }}/github.com/kata-containers/kata-containers/releases/download/{{ kata_containers_version }}/kata-static-{{ kata_containers_version }}-{{ image_arch }}.tar.xz"
+kata_containers_download_url: "{{ aliyun_oss_url }}/github.com/kata-containers/kata-containers/releases/download/{{ kata_containers_version }}/kata-static-{{ kata_containers_version }}-{{ image_arch }}.tar.zst"
 gvisor_runsc_download_url: "{{ aliyun_oss_url }}/storage.googleapis.com/gvisor/releases/release/{{ gvisor_version }}/{{ ansible_architecture }}/runsc"
 gvisor_containerd_shim_runsc_download_url: "{{ aliyun_oss_url }}/storage.googleapis.com/gvisor/releases/release/{{ gvisor_version }}/{{ ansible_architecture }}/containerd-shim-runsc-v1"
 nerdctl_download_url: "{{ aliyun_oss_url }}/github.com/containerd/nerdctl/releases/download/v{{ nerdctl_version }}/nerdctl-{{ nerdctl_version }}-{{ ansible_system | lower }}-{{ image_arch }}.tar.gz"
