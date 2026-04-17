@@ -839,6 +839,7 @@ kata_containers_binary_checksums:
     2.4.0: 0
     2.4.1: 0
   amd64:
+    3.28.0: 99cefb46d70bc27b7bcffd7595be9010c6bed43e1cdfcf8078554c19e7c9b19d
     3.7.0: bebf218cafdc082476c7dabbcc5439aee6a41d6dda24dd3cfffbe0a6ae94e23d
     2.0.4: 022a60c2d92a5ab9a5eb83d5a95154a2d06fdc2206b2a473d902ccc86766371a
     2.1.1: a83591d968cd0f1adfb5025d7aa33ca1385d4b1165ff10d74602302fc3c0373f
@@ -1392,7 +1393,7 @@ downloads:
     enabled: "{{ kata_containers_enabled }}"
     file: true
     version: "{{ kata_containers_version }}"
-    dest: "{{ local_release_dir }}/kata-static-{{ kata_containers_version }}-{{ image_arch }}.tar.xz"
+    dest: "{{ local_release_dir }}/kata-static-{{ kata_containers_version }}-{{ image_arch }}.tar.zst"
     sha256: "{{ kata_containers_binary_checksum }}"
     url: "{{ kata_containers_download_url }}"
     unarchive: false
