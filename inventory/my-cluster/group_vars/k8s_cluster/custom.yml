@@ -1,5 +1,6 @@
 # kata
 kata_containers_version: 3.28.0
+kata_containers_qemu_default_memory: 512
 
 # Download URLs
 aliyun_oss_url: "https://llaoj.oss-cn-beijing.aliyuncs.com/files"
