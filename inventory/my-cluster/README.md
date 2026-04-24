@@ -18,7 +18,7 @@ write to `roles/download/defaults/main.yml`
 ## build image
 
 ```sh
-IMAGE_TAG=v2.21.0-kata-0.17
+IMAGE_TAG=v2.21.0-kata-0.18
 docker build \
   -t registry.cn-beijing.aliyuncs.com/llaoj/kubespray_kubespray:${IMAGE_TAG} \
   -t registry2-qingdao.cosmoplat.com/64_paas/kubespray_kubespray:${IMAGE_TAG} .
